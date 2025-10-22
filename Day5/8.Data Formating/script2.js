@@ -8,5 +8,5 @@ const options = {
     hour:'numeric',
     minute:'numeric'
 }
-console.log(new Intl.DateTimeFormat('en-US',options).format(now))
-console.log(new Intl.DateTimeFormat('en-In',options).format(now))
+console.log(Intl.DateTimeFormat('en-US',{...options,timeZone:'America/New_York'}).format(now))
+console.log(Intl.DateTimeFormat('en-IN',{...options,timeZone: 'Asia/kolkata'}).format(now))
