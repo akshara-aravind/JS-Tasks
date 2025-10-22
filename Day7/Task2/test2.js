@@ -7,7 +7,7 @@ btn.addEventListener('click',() =>{
     result.textContent = inputBox.value
     if(result.style.display === 'none'){
         result.style.display = 'block'
-        inputBox.value = ''
+        // inputBox.value = ''
     }else{
         result.style.display = 'none'
         
