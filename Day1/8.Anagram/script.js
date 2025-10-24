@@ -6,23 +6,20 @@
   ["cat"]
 ]
  */
-// const arr = ['care','race','acre','dog','god','cat'];
-// function anagramTogether(arr){
-//   let result = [];
-//   let w1 = 'care';
-//   let w2 = 'dog';
-//   let w3 = 'cat'
-//   for(let i = 0; i< arr.length; i++){
-//   if(w1.includes(arr[i])){
-//     result.push(arr[i])
-//   }
-//     if(w2.includes(arr[i])){
-//     result.push(arr[i])
-//   }
-//     if(w3.includes(arr[i])){
-//     result.push(arr[i])
-//   }
-//   }
-//   return result;
-// }
-// console.log(anagramTogether(arr))
+const arr = ['care','race','acre','dog','god','cat'];
+function anagramTogether(word){
+let result = []
+
+word.forEach(word => {
+  const sorted = word.split('').sort().join('');
+  const group = result.find(f => f[0].split('').sort().join('') === sorted)
+
+  if(group){
+    group.push(word)  // for grouping 
+  }else{
+    result.push([word]);
+  }
+});
+return result
+}
+console.log(anagramTogether(arr))
