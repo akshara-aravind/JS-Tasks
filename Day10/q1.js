@@ -1,8 +1,5 @@
 //deepClone(obj) copy should not have any refference to the original
-// const obj = {
-//     name : 'Alexa',
-//     age : 18
-// }
+
 let obj = {name:'Alexa', age:18}
 
 function deepClone(obj){
@@ -10,3 +7,8 @@ function deepClone(obj){
  return copy
 }
 console.log(deepClone(obj))
+
+// let newObj = deepClone(obj)
+// newObj.name = 'Gemmini';
+// console.log(obj.name)
+// console.log(newObj.name)

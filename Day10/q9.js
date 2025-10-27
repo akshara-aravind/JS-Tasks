@@ -18,3 +18,4 @@ function validEmail(email){
 console.log(validEmail('test.com'))
 console.log(validEmail('valid@123.com'))
 console.log(validEmail('invalid34.com'))
+console.log(validEmail('alexa@2010.cd'))

@@ -76,7 +76,10 @@ function deleteEmployee(){
     rl.question('Enter employee name to delete: ' ,(name) => {
       const index = employees.findIndex((e) => e.name.toLowerCase() === name.toLowerCase())
       if(index !== -1){
-        
+        employees.splice(index,1);
+        console.log('Employee not found.')
       }
+      showMenu();
     })
 }
+showMenu()
