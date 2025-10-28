@@ -2,12 +2,83 @@
 
 function sumDivisibleByThree(arr){
   let divisibleByThree = []
+  if(arr === null || arr === undefined || arr === '') return 'Invalid'
   for(let i=0; i< arr.length; i++){
     if(arr[i] % 3 === 0){
       divisibleByThree.push(arr[i]) 
     }
   }
   let sum = divisibleByThree.reduce((acc,curr) => acc+ curr,0)
-  return console.log(`${sum} (${divisibleByThree})`)
+   console.log(`${sum} (${divisibleByThree})`)
+   return sum
 }
-sumDivisibleByThree([1,2,3,4,5,6,7,8,9,10])
+// sumDivisibleByThree([1,2,3,4,5,6,7,8,9,10])
+
+const testCases = [
+  {
+    input:[1,2,3,4,5,6],
+    expected:9
+  },
+  {
+    input:[2,4,8,10],
+    expected:0
+  },
+  {
+    input:[-2,-4,-6,-9,-8,7],
+    expected:-15
+  },
+  {
+    input:[-5,0,9],
+    expected:9
+  },
+  {
+    input:[1,'3',8,0],
+    expected:'Invalid'
+  },
+  {
+    input:['a','b','c'],
+    expected:'Invalid'
+  },
+  {
+    input:['a',2,5],
+    expected:'Invalid'
+  },
+  {
+    input:[0,0,0,0],
+    expected:0
+  },
+  {
+    input:[2,'!',4,6],
+    expected:'Invalid'
+  },
+  {
+    input:[-2,-1,0,1,2],
+    expected:[-2,0,2]
+  },
+  {
+    input:[1,2,3,''],
+    expected:'Invalid'
+  },
+  {
+    input:[123,345,200,201,144,80,54],
+    expected:[200,144,80,54]
+  },
+  {
+    input:[-123,-345,-200,-201,-144,-80,-54],
+    expected:[-200,-144,-80,-54]
+  },
+  {
+    input:3,
+    expected: 'Invalid'
+  },
+  {
+    input:'',
+    expected:'Invalid'
+  }
+]
+testCases.forEach((item,index) => {
+  const outPut = sumDivisibleByThree(item.input)
+  const press = JSON.stringify(outPut) === JSON.stringify(item.expected)
+
+  console.log(`Test ${index+1}:`, press ? 'Passed':'Failed')
+})
