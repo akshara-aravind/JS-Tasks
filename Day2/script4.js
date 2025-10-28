@@ -49,8 +49,7 @@ const testCases = [
     input1:'123',
     input2:'321',
     expected:true
-  },
-
+  }
 ]
 testCases.forEach((item,index)=>{
   const outPut = isAnagram(item.input1, item.input2)
