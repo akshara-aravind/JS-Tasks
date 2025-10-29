@@ -14,7 +14,7 @@ function longestPrefix(arr){
     prefix = prefix.slice(0,-1)
    }
   }
-  console.log(prefix)
+  console.log(JSON.stringify(prefix))
 }
 longestPrefix(['flower','flow','flight'])
 longestPrefix(['dog','rececar','car'])

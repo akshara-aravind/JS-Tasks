@@ -2,15 +2,23 @@
 
 function isSortedBasedLength(arr){
 let longest = []
-let leng = 0;
-for(let i=0; i< arr.length; i++){
- leng = arr[i];
-longest.push(leng)
-//  let sorted = leng.sort()
-//  longest.push(sorted)
+for(let i=0; i< arr.length;i++){
+    longest.push(arr[i].length)
 }
-return longest;
+let result = longest.sort((a,b) => a-b)
+let array = [];
+for(let i=0; i<arr.length;i++){
+    for(let j=0; j<arr.length; j++){
+        console.log(result[i])
+        if(result[i] === arr[j].length){
+            array.push(arr[j])
+        }
+    }
 }
-// console.log(isSortedBasedLength(['open','source','programming','is','fun']))
+
+// console.log(longest)
+return array
+}
+console.log(isSortedBasedLength(['open','source','programming','is','fun']))
 // console.log(isSortedBasedLength(['hello','world']))
 // console.log(isSortedBasedLength(['cat','dog','tiger','elephant']))

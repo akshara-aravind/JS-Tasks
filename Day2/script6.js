@@ -3,7 +3,9 @@
 function sumDivisibleByThree(arr){
   let divisibleByThree = []
   if(arr === null || arr === undefined || arr === '') return 'Invalid'
+  if(!Array.isArray(arr)) return 'Invalid'
   for(let i=0; i< arr.length; i++){
+    if(typeof(arr[i]) !== 'number' || arr[i] === '') return 'Invalid'
     if(arr[i] % 3 === 0){
       divisibleByThree.push(arr[i]) 
     }
@@ -36,11 +38,11 @@ const testCases = [
     expected:'Invalid'
   },
   {
-    input:['a','b','c'],
+    input:'a',
     expected:'Invalid'
   },
   {
-    input:['a',2,5],
+    input:{a:1,b:2},
     expected:'Invalid'
   },
   {
@@ -52,20 +54,8 @@ const testCases = [
     expected:'Invalid'
   },
   {
-    input:[-2,-1,0,1,2],
-    expected:[-2,0,2]
-  },
-  {
     input:[1,2,3,''],
     expected:'Invalid'
-  },
-  {
-    input:[123,345,200,201,144,80,54],
-    expected:[200,144,80,54]
-  },
-  {
-    input:[-123,-345,-200,-201,-144,-80,-54],
-    expected:[-200,-144,-80,-54]
   },
   {
     input:3,
@@ -73,6 +63,18 @@ const testCases = [
   },
   {
     input:'',
+    expected:'Invalid'
+  },
+  {
+    input:true,
+    expected:'Invalid'
+  },
+  {
+    input:NaN,
+    expected:'Invalid'
+  },
+  {
+    input:123,
     expected:'Invalid'
   }
 ]

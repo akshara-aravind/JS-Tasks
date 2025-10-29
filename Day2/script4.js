@@ -1,7 +1,7 @@
 //4. Write a program that determines if a string is an anagram of another string. An anagram is a word or phrase formed by rearranging the letters of another word or phrase.
 function isAnagram(str1,str2){
   let result = []
-  if(typeof(str1) !== 'string' || typeof(str2) !== 'string') return 'Invalid'
+  if(typeof(str1) !== 'string' || typeof(str2) !== 'string'|| str1 === '' || str2 === '') return 'Invalid'
   let forNormal = str => str.toLowerCase().split('').sort().join('')
   return forNormal(str1) === forNormal(str2)
 }
@@ -49,6 +49,41 @@ const testCases = [
     input1:'123',
     input2:'321',
     expected:true
+  },
+  {
+    input1:['no'],
+    input2:['on'],
+    expected:'Invalid'
+  },
+  {
+    input1:123,
+    input2:231,
+    expected:'Invalid'
+  },
+  {
+    input1:'listen.',
+    input2:'silent',
+    expected:false
+  },
+  {
+    input1:'',
+    input2:'',
+    expected:'Invalid'
+  },
+  {
+    input1:null,
+    input2:null,
+    expected:'Invalid'
+  },
+  {
+    input1:undefined,
+    input2:undefined,
+    expected:'Invalid'
+  },
+  {
+    input1:true,
+    input2:true,
+    expected:'Invalid'
   }
 ]
 testCases.forEach((item,index)=>{
