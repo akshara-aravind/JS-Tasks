@@ -88,7 +88,7 @@ const testCases = [
 ]
 testCases.forEach((item,index)=>{
   const outPut = isAnagram(item.input1, item.input2)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = outPut === item.expected
 
   console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
 })

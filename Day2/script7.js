@@ -15,10 +15,10 @@ function longestWord(str){
    if(str === '') return 'Invalid'
    return  longest.join(' ');
 }
-console.log(longestWord('Hello world of programming'))
-console.log(longestWord('The quick brown fox jumps over the lazy dog'))
-console.log(longestWord('I love coding'))
-
+// console.log(longestWord('Hello world of programming'))
+// console.log(longestWord('The quick brown fox jumps over the lazy dog'))
+// console.log(longestWord('I love coding'))
+longestWord()
 
 const testCases = [
   {
@@ -84,7 +84,7 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut= longestWord(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = outPut === item.expected
 
   console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
 })

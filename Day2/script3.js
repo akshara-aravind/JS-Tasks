@@ -1,4 +1,5 @@
 //3. Write a program that takes a list of integers as input and returns a new list with only the even numbers.
+import { arrayEquality } from "../util.js"
 function evenNumbers(arr){
   let even = []
   if(!Array.isArray(arr)) return 'Invalid'
@@ -88,7 +89,7 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = evenNumbers(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = arrayEquality(outPut,item.expected)
 
-  console.log(`Test ${index+1}:`, pass? 'Passed' : 'Failed')
+  console.log(`Test ${index+1}:`, pass)
 })

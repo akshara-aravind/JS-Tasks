@@ -20,6 +20,7 @@
 // for(let i = number[0]; i< number.length;i++){
 //   console.log(i);
 // }
+import { arrayEquality } from "../util.js"
 function missingNum(arr){
   let startNum = arr[0]
   let endNum = arr[arr.length-1]
@@ -47,49 +48,50 @@ function missingNum(arr){
   }
   return missing
 }
-console.log(missingNum([1,2,4]))
-console.log(missingNum([10,11,13,14,15]))
-console.log(missingNum([2,3,4,5,6]))
-console.log(missingNum([1,2,5,6]))
+missingNum()
+// console.log(missingNum([1,2,4]))
+// console.log(missingNum([10,11,13,14,15]))
+// console.log(missingNum([2,3,4,5,6]))
+// console.log(missingNum([1,2,5,6]))
 
-// const testCases = [
-//   {
-//     input:[1,2,4],
-//     expected:3
-//   },
-//   {
-//     input:[10,11,13,14,15],
-//     expected:12
-//   },
-//   {
-//     input:[2,3,4,5,6],
-//     expected:'No missing number'
-//   },
-//   {
-//     input:'1 2 4 5',
-//     expected:'Invalid'
-//   },
-//   {
-//     input:[1,2,3,'5'],
-//     expected:'Invalid'
-//   },
-//   {
-//     input:{a:1, b:2},
-//     expected:'Invalid'
-//   },
-//   // {
-//   //   input:undefined,
-//   //   expected:'Invalid'
-//   // },
-//   {
-//     input:[1,2,5,6,7],
-//     expected:[3,4]
-//   }
+const testCases = [
+  {
+    input:[1,2,4],
+    expected:3
+  },
+  {
+    input:[10,11,13,14,15],
+    expected:12
+  },
+  {
+    input:[2,3,4,5,6],
+    expected:'No missing number'
+  },
+  {
+    input:'1 2 4 5',
+    expected:'Invalid'
+  },
+  {
+    input:[1,2,3,'5'],
+    expected:'Invalid'
+  },
+  {
+    input:{a:1, b:2},
+    expected:'Invalid'
+  },
+  // {
+  //   input:undefined,
+  //   expected:'Invalid'
+  // },
+  {
+    input:[1,2,5,6,7],
+    expected:[3,4]
+  }
   
-// ]
-// testCases.forEach((item,index) => {
-//   const outPut = missingNum(item.input)
-//   const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+]
+testCases.forEach((item,index) => {
+  const outPut = missingNum(item.input)
+  const pass = arrayEquality(outPut,item.expected)
 
-//   console.log(`Test ${index+1}:`, pass? 'Passed': 'Failed')
-// })
+  console.log(`Test ${index+1}:`, pass)
+})

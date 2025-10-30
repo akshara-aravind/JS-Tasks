@@ -1,5 +1,6 @@
 //Without using built-in methods like .map(), .filter(), or .reduce(), implement your own versions:
 //myMap
+import { arrayEquality } from "../../util.js"
 function myMap(array,callback){
 let result = []
 for(let i = 0; i < array.length; i++){
@@ -90,22 +91,10 @@ console.log('---myMap------')
 
 testCases.forEach((item,index)=> {
   const outPut = myMap(item.input,item.callback)
-  const pass = JSON.stringify(outPut)=== JSON.stringify(item.expected)
-
-  console.log(`Test ${index+1}:`,pass ? "Passed": 'Failed' )
+  const pass = arrayEquality(outPut,item.expected)
+ 
+  console.log(`-------${index+1}-------------`)
+  console.log(`Test ${index+1}:`,pass)
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })
-// console.log(myMap(numbers,n => n*2))
-// console.log(myMap(numbers,n => n*20))
-// console.log(myMap(numbers, n => n/2))
-// console.log(myMap(numbers, n => n%2))
-// console.log(myMap(numbers, n => n*0))
-// // console.log(myMap(numbers, n => n*-10))
-// console.log(myMap(numbers, n => n / -1))
-// // console.log(myMap([-2,-8,7,4,-1,9],n => n>0))
-// console.log(myMap([-1,-2,-5,1,8], n => n*-1))
-// console.log(myMap([1,4,6,8], n => n.toString()))
-// console.log(myMap(['1','2',9,0],n => n*2))
-// console.log(myMap(['1','2',9,0],n => n-1))
-// console.log(myMap([], n=> n*2))
-// console.log(myMap(['a'],n => n*2))
-// console.log(myMap([a,b,c], n=> n>0))

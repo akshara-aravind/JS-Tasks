@@ -1,4 +1,5 @@
 //myReduce
+import { arrayEquality } from "../../util.js"
 function myReduce(array,callback,intialValue){
   let acc = intialValue
   for(let i =0; i< array.length; i++){
@@ -38,7 +39,7 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
     let outPut = myReduce(item.input, item.callback,item.intialValue)
-    let pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+    let pass = arrayEquality(outPut,item.expected)
 
     console.log(`Test ${index+1}:`, pass? 'Passed': 'Failed')
 })

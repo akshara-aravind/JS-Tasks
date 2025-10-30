@@ -4,15 +4,16 @@
 // function isValidEmail(str){
 //     return str.includes('@') && str.includes('.com')
 // }
-
+import { arrayEquality } from "../util.js"
 function isValidEmail(str){
     if(typeof(str) !== 'string') return 'Invalid email id'
     let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     return emailRegex.test(str)
 }
-console.log(isValidEmail('test@example.com'))
-console.log(isValidEmail('invalid.email.com'))
-console.log(isValidEmail('user@domain'))
+isValidEmail()
+// console.log(isValidEmail('test@example.com'))
+// console.log(isValidEmail('invalid.email.com'))
+// console.log(isValidEmail('user@domain'))
 
 const testCases = [
     {
@@ -78,7 +79,10 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
     const outPut = isValidEmail(item.input)
-    const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+    const pass = arrayEquality(outPut,item.expected)
 
-    console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
+    console.log(`---------${index+1}----------`)
+    console.log(`Test ${index+1}:`, pass)
+    console.log(`Expected: ${item.expected}`)
+    console.log(`Output: ${outPut}`)
 })

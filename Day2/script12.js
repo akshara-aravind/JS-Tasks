@@ -1,4 +1,5 @@
 //12. Write a program that finds the maximum product of three numbers in a given list of integers.
+import { arrayEquality } from "../util.js"
 function maximumProductOfThree(arr){
   let firstLongest = -Infinity
   let secondLongest = -Infinity
@@ -96,7 +97,10 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = maximumProductOfThree(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = arrayEquality(outPut,item.expected)
 
-  console.log(`Test ${index+1}:`,pass?'Passed':'Failed')
+  console.log(`-------${index+1}---------`)
+  console.log(`Test ${index+1}:`,pass)
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

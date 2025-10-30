@@ -78,7 +78,7 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = isPerfectSqure(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = outPut === item.expected
 
   console.log(`Test ${index+1}:`,pass?'Passed':'Failed')
 })

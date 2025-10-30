@@ -1,5 +1,5 @@
 //6. Write a program that takes a list of integers as input and returns the sum of all the numbers divisible by 3.
-
+import { arrayEquality } from "../util.js"
 function sumDivisibleByThree(arr){
   let divisibleByThree = []
   if(arr === null || arr === undefined || arr === '') return 'Invalid'
@@ -11,7 +11,7 @@ function sumDivisibleByThree(arr){
     }
   }
   let sum = divisibleByThree.reduce((acc,curr) => acc+ curr,0)
-   console.log(`${sum} (${divisibleByThree})`)
+  //  console.log(`${sum} (${divisibleByThree})`)
    return sum
 }
 // sumDivisibleByThree([1,2,3,4,5,6,7,8,9,10])
@@ -80,7 +80,10 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = sumDivisibleByThree(item.input)
-  const press = JSON.stringify(outPut) === JSON.stringify(item.expected)
-
-  console.log(`Test ${index+1}:`, press ? 'Passed':'Failed')
+  const press = arrayEquality(outPut,item.expected)
+  
+  console.log(`--------${index+1}----------`)
+  console.log(`Test ${index+1}:`, press)
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

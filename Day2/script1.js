@@ -84,7 +84,7 @@ const testCases = [
 
 testCases.forEach((item,index) => {
   let outPut = isPrime(item.input)
-  let pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  let pass = outPut === item.expected
 
   console.log(`Test ${index+1}:`, pass ? 'Passed': 'Failed')
 })

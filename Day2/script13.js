@@ -1,4 +1,5 @@
 //13. Write a program that takes a list of strings as input and returns the longest word among them.
+import { arrayEquality } from "../util.js";
 function longestWord(arr){
   if(!Array.isArray(arr)) return 'Invalid'
   let longest = arr[0];
@@ -79,7 +80,10 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = longestWord(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = arrayEquality(outPut,item.expected)
 
-  console.log(`Test ${index+1}:`,pass? 'Passed':'Failed')
+  console.log(`-------------${index+1}-------------`)
+  console.log(`Test ${index+1}:`,pass)
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

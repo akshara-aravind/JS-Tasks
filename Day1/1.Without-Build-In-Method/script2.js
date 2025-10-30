@@ -1,4 +1,5 @@
 //myFilter
+import { arrayEquality } from "../../util.js"
 function myFilter(array,callback){
   let result = []
   for(let i = 0; i<array.length; i++){
@@ -97,7 +98,7 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
     let outPut = myFilter(item.input, item.callback)
-    let pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+    let pass = arrayEquality(outPut,item.expected)
 
-    console.log(`Test ${index+1}:`, pass? 'Passed': 'Failed')
+    console.log(`Test ${index+1}:`, pass)
 })
