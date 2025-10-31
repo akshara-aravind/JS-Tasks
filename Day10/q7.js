@@ -27,10 +27,12 @@
        70:'seventy',
        80:'eighty',
        90:'ninety',
+       0:'zero'
     };
 
 function numberToText(n){
     if(n in numbers) return numbers[n];
+    if(n < 0) return 'Negative' + numberToText(Math.abs(n))
     let text = ''
     if(n >= 100){
         text += numberToText(Math.round(Math.floor(n / 100))) + 'hundred'
@@ -46,4 +48,4 @@ function numberToText(n){
     }
     return text
 }
-console.log(numberToText(196))
+console.log(numberToText(-5000))

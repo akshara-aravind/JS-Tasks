@@ -1,10 +1,10 @@
 //myReduce
 import { arrayEquality } from "../../util.js"
 function myReduce(array,callback,intialValue){
+  if(!Array.isArray(array)) return 'Invalid'
   let acc = intialValue
   for(let i =0; i< array.length; i++){
     if(typeof(array[i]) !=='number') return 'Invalid'
-   if(array[i] === null || array[i] === true || array[i] === false || array[i] === undefined) return 'Invalid'
   if(acc === undefined){
     acc = array[0]
   }else{
@@ -35,11 +35,30 @@ const testCases = [
         callback:(acc,curr) => acc* curr,
         intialValue:1,
         expected:0
+    },
+    {
+      input:[1,2,3,''],
+      callback:(acc,curr) => acc*curr,
+      expected:'Invalid'
+    },
+    {
+      input:'',
+      callback:(acc,curr) => acc+curr,
+      expected:'Invalid'
+    },
+    {
+      input:[0,0,0,0],
+      callback:(acc,curr) => acc*curr,
+      intialValue:1,
+      expected:0
     }
 ]
 testCases.forEach((item,index) => {
     let outPut = myReduce(item.input, item.callback,item.intialValue)
     let pass = arrayEquality(outPut,item.expected)
 
-    console.log(`Test ${index+1}:`, pass? 'Passed': 'Failed')
+    console.log(`--------${index+1}---------`)
+    console.log(`Test ${index+1}:`, pass)
+    console.log(`Expected: ${item.expected}`)
+    console.log(`Output: ${outPut}`)
 })

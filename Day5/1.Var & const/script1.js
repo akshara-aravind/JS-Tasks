@@ -4,6 +4,3 @@ const age = 12;
 const adminStatus ='true'
 console.log(name,age,adminStatus)
 
-
-
-

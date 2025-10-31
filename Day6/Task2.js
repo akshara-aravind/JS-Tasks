@@ -8,3 +8,19 @@ function wordFrequency(str){
     return count
 }
 console.log(wordFrequency('Hello hello world, world!'))
+
+const testCases = [
+    {
+        input:'Hello hello world, world!',
+        expected:{hello :2, world: 2}
+    }
+]
+testCases.forEach((item,index) => {
+    const outPut = wordFrequency(item.input)
+    const pass = outPut === item.expected
+
+    console.log(`-------${index+1}--------`)
+    console.log(`Test ${index+1}:`, pass ? 'Passed':'Failed')
+    console.log(`Expected: ${item.expected}`)
+    console.log(`Output: ${outPut}`)
+})

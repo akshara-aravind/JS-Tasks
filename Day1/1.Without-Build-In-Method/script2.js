@@ -1,10 +1,10 @@
 //myFilter
 import { arrayEquality } from "../../util.js"
 function myFilter(array,callback){
+   if(!Array.isArray(array)) return 'Invalid'
   let result = []
   for(let i = 0; i<array.length; i++){
     if(typeof(array[i]) !== "number") return 'Invalid'
-    if(array[i] === null || array[i] === true || array[i] === false || array[i] === undefined) return 'Invalid'
     if(callback(array[i])){
       result.push(array[i])
     } 
