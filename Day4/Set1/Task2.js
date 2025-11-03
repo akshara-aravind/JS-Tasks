@@ -11,7 +11,9 @@
 //  return result
 // }
 // console.log(permutation('abc'))
+import { arrayEquality } from "../../util.js"
 function getPermutation(str){
+  if(typeof(str) !== 'string') return 'Invalid'
   if(str.length === 0) return [str]
   let result =[]
   for(let i=0; i< str.length;i++){
@@ -34,14 +36,65 @@ const testCases = [
     input:'abc',
     expected:[ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   },
+  {
+    input:123,
+    expected:'Invalid'
+  },
+  {
+    input:'123',
+    expected:['123','132','213','231','312','321']
+  },
+  {
+    input:'',
+    expected:['']
+  },
+  {
+    input:['abc'],
+    expected:'Invalid'
+  },
+  {
+    input:'000',
+    expected:['000','000','000','000','000','000']
+  },
+  {
+    input:' ',
+    expected:[' ']
+  },
+  {
+    input:'a',
+    expected:['a']
+  },
+  {
+    input:'pq',
+    expected:['pq','qp']
+  },
+  {
+    input:null,
+    expected:'Invalid'
+  },
+  {
+    input:NaN,
+    expected:'Invalid'
+  },
+  {
+    input:undefined,
+    expected:'Invalid'
+  },
+  {
+    input:true,
+    expected:'Invalid'
+  },
+  {
+    input:false,
+    expected:'Invalid'
+  },
 ]
 testCases.forEach((item,index) => {
   const outPut = getPermutation(item.input)
-  const pass = outPut === item.expected
+  const pass = arrayEquality(outPut,item.expected)
 
   console.log(`--------${index+1}---------`)
-  console.log(`Test ${index+1}:`,pass? 'Passed':'Failed')
-  console.log(`
-    Expected:${item.expected}
-    Output: ${outPut}`)
+  console.log(`Test ${index+1}:`,pass)
+  console.log(`Expected:${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

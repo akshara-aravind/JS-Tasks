@@ -1,7 +1,6 @@
 // 1. Find the highest increasing ordered chain in the given input of numbers. The order of the input should not be changed. Maximum input length can be 50.
 function highestOrder(arr){
 let result = []
-let longest = 0
 for(let i=0; i< arr.length; i++){
     let current = [arr[i]]
     for(let j=i+1; j< arr.length; j++){

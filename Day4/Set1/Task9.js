@@ -89,5 +89,8 @@ testCases.forEach((item,index)=>{
   const outPut = anagram(item.input1, item.input2)
   const pass = outPut === item.expected
 
+  console.log(`------${index+1}-------`)
   console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

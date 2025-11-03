@@ -41,6 +41,38 @@ const testCases = [
     input:null,
     expected:'Invalid'
   },
+  {
+    input:'123',
+    expected:'Invalid'
+  },
+  {
+    input:[345],
+    expected:'Invalid'
+  },
+  {
+    input:{},
+    expected:'Invalid'
+  },
+  {
+    input:345.55,
+    expected:13
+  },
+  {
+    input:undefined,
+    expected:'Invalid'
+  },
+  {
+    input:123000,
+    expected:6
+  },
+  {
+    input:0.001,
+    expected:0
+  },
+  {
+    input:-23.65,
+    expected:6
+  }
 ]
 testCases.forEach((item,index)=> {
   const outPut = sumOfDigits(item.input)

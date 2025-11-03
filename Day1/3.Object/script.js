@@ -233,3 +233,4 @@ testCases.forEach((item,index)=>{
 
   console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
 })
+object

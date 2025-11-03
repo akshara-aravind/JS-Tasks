@@ -1,4 +1,5 @@
 //5. Write a program that takes a string as input and returns the frequency of each character in the string.
+import { objectEquality } from "../utilObj.js"
 function freqChar(str1){
   if(str1 === null || str1 === true || str1 === false || str1 === undefined || str1 === '' || typeof(str1) !== 'string') return 'Invalid'
   let str = str1.replaceAll(/\s/g,'')
@@ -7,6 +8,7 @@ function freqChar(str1){
   for(let char of str){
     freq[char] = (freq[char] || 0) + 1
   }
+  console.log(freq)
   return freq;
 }
 // console.log(freqChar('hello'))
@@ -78,7 +80,8 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = freqChar(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = objectEquality(outPut,item.expected)
 
-  console.log(`Test ${index+1}:`, pass ? 'Passed':'Failed')
+  console.log(`-------${index+1}-------`)
+  console.log(`Test ${index+1}:`, pass)
 })

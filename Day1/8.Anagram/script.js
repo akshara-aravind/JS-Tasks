@@ -7,11 +7,8 @@
 ]
  */
 // const arr = ['care','race','acre','dog','god','cat'];
+import { arrayEquality } from "../../util.js"
 function anagramTogether(word){
-  // for(let i=0; i< word.length; i++){
-  //  word[i].replaceAll(/\s/g,'') 
-  //   if(!Array.isArray(word) || typeof(word[i]) !=='string' || word[i] === '') return 'Invalid'
-  // }
   if(!Array.isArray(word)) return 'Invalid'
   for(let item of word){
     if(typeof(item) !== 'string') return 'Invalid'
@@ -97,7 +94,10 @@ const testCases = [
 ]
 testCases.forEach((item,index) => {
   const outPut = anagramTogether(item.input)
-  const pass = JSON.stringify(outPut) === JSON.stringify(item.expected)
+  const pass = arrayEquality(outPut,item.expected)
 
+  console.log(`-----${index+1}----`)
   console.log(`Test ${index+1}:`, pass? 'Passed':'Failed')
+  console.log(`Expected: ${item.expected}`)
+  console.log(`Output: ${outPut}`)
 })

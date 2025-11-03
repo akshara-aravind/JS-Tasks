@@ -4,4 +4,4 @@ function isNaN(){
     return true;
   }
 }
-console.log(isNaN('ss'))
+console.log(isNaN(12))

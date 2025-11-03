@@ -13,8 +13,7 @@ function flat(arr){
     let result =[]
       function flatten(arr){
         for(let item of arr){
-          // if(!Array.isArray(item)) return 'Invalid'
-          // if(typeof(item) !== 'number') return 'Invalid'
+          if(!Array.isArray(item) || typeof(item) !== 'number') return 'Invalid'
           if(Array.isArray(item)){
         flatten(item)
       }else{
