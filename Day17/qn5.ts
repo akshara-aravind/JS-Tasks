@@ -13,18 +13,22 @@ function sortBySum(arr:number[]){
         another.push(sum)
     }
     sorted = another.sort((a,b)=> b-a)
+    let used:number[] = []
     for(let item of sorted){
         if(typeof(item) !== 'number' || isNaN(item)) return 'Invalid'
-        for(let val of sums){
-            if(item === val){
-                result.push(arr[sums.indexOf(item)])
+        for(let i=0; i< sums.length;i++){
+            if(sums[i] === item && !used.includes(i)){
+                result.push(arr[i])
+                used.push(i)
+                break;
             }
         }
     }
+    console.log(used)
     console.log(result)
     return result
 }
-// console.log(sortBySum([[1,2,3],[4],[2,7],[4]]))
+// console.log(sortBySum([[1,2,3],[4],[2,7],[1,1,1,1]))
 
 const testCases = [
     {
@@ -60,8 +64,12 @@ const testCases = [
         expected:[[12],[-2,-9,0],[-12,-1]]
     },
     {
-        input:[[1,2],[1,9],[3,0]],
-        expected:[[1,9],[1,2]]
+        input:[[0,3],[1,9],[1,2]],
+        expected:[[1,9],[0,3],[1,2]]
+    },
+    {
+        input:[[1,1,2,2],[5,1],[6],[14]],
+        expected:[[14],[1,1,2,2],[5,1],[6]]
     }
 ]
 testCases.forEach((item,index)=>{

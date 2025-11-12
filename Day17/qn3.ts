@@ -1,8 +1,8 @@
 // 3 Write a function Pipe(...fns) that composes multiple functions left-to-right.
-function pipe(fns:(...Function)=>number, x:number){
+function pipe(fns:((x:number)=> number)[]):(x:number)=> number{
     if(fns.length === 0) return x => x
 
-    return function(x:number){
+    return function(x:number): number {
         let result = x
         for(let i=0; i< fns.length;i++){
             // console.log(fns[i])
@@ -18,7 +18,7 @@ console.log(pipe([x => x + 5, x => x * 3, x => x * 10])(5))
 const testCases = [
     {
         input:5,
-        fns:(x:number) => [x+5,(x:number)=>x*3],
+        fns:[(x:number) => x+5,(x:number)=>x*3],
         expected:30
     }
 ]
