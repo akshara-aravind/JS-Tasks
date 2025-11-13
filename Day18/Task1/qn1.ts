@@ -11,9 +11,9 @@ export function delectSymmetry(matrix:number[][]){
     let result = []
     let horizontal:boolean;
     let vertical:boolean;
-    let diagonal:boolean;
+    let diagonal:boolean = true;
     let left = 0, right = matrix.length-1
-    if(matrix.length !== matrix[0].length) return 'Invalid not an squre matrix'
+    if(matrix.length !== matrix[0].length) return 'Invalid not an square matrix'
     for(let i=0; i< matrix.length;i++){
         if(!Array.isArray(matrix[i])) return 'Invalid'
         if(matrix[left][i] !== matrix[right][i]){
@@ -32,13 +32,14 @@ export function delectSymmetry(matrix:number[][]){
         }
     }
     for(let i=0; i< matrix.length;i++){
-        if(matrix[i][right] !== matrix[right][i]){
+        for(let j =i+1; j< matrix.length; j++){
+        if(matrix[i][j] !== matrix[j][i]){
                 diagonal = false
-                break
-        }else{
-                diagonal = true
-            }
+                break;
+        }
     }
+    if (!diagonal) break;
+}
 
 result.push({horizontal:horizontal,vertical:vertical,diagonal:diagonal})
 console.log(result)

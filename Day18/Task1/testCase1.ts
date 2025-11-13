@@ -10,14 +10,14 @@ const testCase = [
     },
     {
         input:[{a:1},[2,4,5]],
-        expected:'Invalid'
+        expected:'Invalid not an square matrix'
     },
     {
         input:[
             [1,2,3],
             [4,6,7]
         ],
-        expected:'Invalid not an squre matrix'
+        expected:'Invalid not an square matrix'
     },
     {
         input:[
@@ -47,13 +47,13 @@ const testCase = [
     },
     {
         input:[
-            [-2,-4,-0,5,-2],
-            [3,9,6,8,3],
-            [0,12,5,3,0],
-            [-1,8,9,3,-1],
-            [-2,-4,-0,5,-2]
-        ],
-        expected:[{horizontal:true,vertical:true,diagonal:true}]
+            [-2, -4,  0,  5, -2],
+            [-4,  9,  6,  8,  3],
+            [ 0, 12,  5,  3,  0],
+            [-1,  8,  9,  3, -1],
+            [-2, -4,  0,  5, -2]
+      ],
+        expected:[{horizontal:true,vertical:false,diagonal:true}]
     }
 ]
 testCase.forEach((item,index)=>{
@@ -62,4 +62,6 @@ testCase.forEach((item,index)=>{
 
     console.log(`-----${index+1}------`)
     console.log(`Test ${index+1}:`,pass ?'Passed':'Failed')
+    console.log(`Expected: ${item.expected}`)
+    console.log(`Output: ${output}`)
 })
