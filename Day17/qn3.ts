@@ -15,16 +15,21 @@ function pipe(fns:((x:number)=> number)[]):(x:number)=> number{
 console.log(pipe([x => x + 5, x => x * 3])(5))
 console.log(pipe([x => x + 5, x => x * 3, x => x * 10])(5))
 
+type TestCase = {
+    input:number;
+    fns:((x:number)=> number)[]
+    expected:number;
+}
 const testCases = [
     {
         input:5,
-        fns:[(x:number) => x+5,(x:number)=>x*3],
+        fns:[x => x+5,x =>x*3],
         expected:30
     }
 ]
 testCases.forEach((item,index)=>{
-    const output = pipe(item.input,item.fns)
-    const pass = JSON.stringify(output)=== JSON.stringify(item.expected)
+    const output = pipe(item.fns)(item.input)
+    const pass = output=== item.expected
 
     console.log(`----${index+1}----`)
     console.log(`Test ${index+1}:`,pass ? 'Passed':'Failed')
