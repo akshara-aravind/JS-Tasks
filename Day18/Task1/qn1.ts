@@ -5,45 +5,22 @@ horizontal — true if the matrix reads the same top-to-bottom
 vertical — true if the matrix reads the same left-to-right
 diagonal — true if the matrix equals its diagonal mirror
 */
-
-export function delectSymmetry(matrix:number[][]){
-    if(!Array.isArray(matrix)) return 'Invalid'
-    let result = []
-    let horizontal:boolean;
-    let vertical:boolean;
-    let diagonal:boolean = true;
-    let left = 0, right = matrix.length-1
-    if(matrix.length !== matrix[0].length) return 'Invalid not an square matrix'
-    for(let i=0; i< matrix.length;i++){
-        if(!Array.isArray(matrix[i])) return 'Invalid'
-        if(matrix[left][i] !== matrix[right][i]){
-            horizontal = false
-            break;
-        }else{
-            horizontal = true
+export function delectSymmetry(matrix:number[][]):boolean | string | object{
+    if(!Array.isArray(matrix)) return 'Invalid';
+    if(matrix.length === 0) return {horizontal:true,vertical:true,diagonal:true};
+    if(matrix.length !== matrix[0].length ) return 'Invalid: not a square matrix'
+    let horizontal:boolean = true
+    let vertical:boolean = true
+    let diagonal:boolean = true
+    for(let i=0;i<matrix.length;i++){
+        for(let j=0; j<matrix.length;j++){
+            if(matrix[i][j] !== matrix[matrix.length-1-i][j]) horizontal = false
+            if(matrix[i][j] !== matrix[i][matrix.length-1-j]) vertical = false
+            if(matrix[i][j] !== matrix[j][i]) diagonal = false
         }
     }
-    for(let i=0; i< matrix.length;i++){
-        if(matrix[i][left] !== matrix[i][right]){
-            vertical = false
-            break;
-        }else{
-            vertical = true
-        }
-    }
-    for(let i=0; i< matrix.length;i++){
-        for(let j =i+1; j< matrix.length; j++){
-        if(matrix[i][j] !== matrix[j][i]){
-                diagonal = false
-                break;
-        }
-    }
-    if (!diagonal) break;
-}
-
-result.push({horizontal:horizontal,vertical:vertical,diagonal:diagonal})
-console.log(result)
-return result
+    console.log({horizontal,vertical,diagonal})
+    return {horizontal,vertical,diagonal}
 }
 // console.log(delectSymmetry([
 //     [1,2,1],

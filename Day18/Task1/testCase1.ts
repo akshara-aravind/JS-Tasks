@@ -6,7 +6,7 @@ const testCase = [
             [2,7,2],
             [1,2,1]
         ],
-        expected:[{horizontal:true,vertical:true,diagonal:true}]
+        expected:{horizontal:true,vertical:true,diagonal:true}
     },
     {
         input:[{a:1},[2,4,5]],
@@ -26,20 +26,20 @@ const testCase = [
             [7,2,8,7],
             [1,2,3,5]
         ],
-        expected:[{horizontal:true,vertical:false,diagonal:false}]
+        expected:{horizontal:true,vertical:false,diagonal:false}
     },
     {
         input:[
             [0,8],
             [8,8]
         ],
-        expected:[{horizontal:false,vertical:false,diagonal:true}]
+        expected:{horizontal:false,vertical:false,diagonal:true}
     },
     {
         input:[
             [2]
         ],
-        expected:[{horizontal:true,vertical:true,diagonal:true}]
+        expected:{horizontal:true,vertical:true,diagonal:true}
     },
     {
         input:{a:[1,2]},
@@ -53,7 +53,7 @@ const testCase = [
             [-1,  8,  9,  3, -1],
             [-2, -4,  0,  5, -2]
       ],
-        expected:[{horizontal:true,vertical:false,diagonal:true}]
+        expected:{horizontal:true,vertical:false,diagonal:true}
     }
 ]
 testCase.forEach((item,index)=>{
