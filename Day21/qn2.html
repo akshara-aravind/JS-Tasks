@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+</head>
+<body>
+    <div class="container">
+    <h1>List of Ice-cream</h1>
+    <ul class="lists">
+    <li class="tooltip">
+        <p>Chocolate Chip Cookie</p>
+        <span class="tooltiptext">Chocolate Chip Cookie</span>
+    </li>
+     <li class="tooltip">
+        <p>Peanut Butter Bliss</p>
+        <span class="tooltiptext">Peanut Butter Bliss</span>
+    </li>
+    <li class="tooltip">
+        <p>Mint chocolate Chip</p>
+        <span class="tooltiptext">Mint chocolate Chip</span>
+    </li>
+    </ul>
+    </div>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+        .lists{
+            list-style: none;
+        }
+        li p{
+            position: relative;
+            width: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tooltip{
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltiptext{
+            visibility: hidden;
+            width:500px;
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .tooltip:hover .tooltiptext{
+            visibility: visible;
+            overflow: visible;
+            white-space: nowrap
+        }
+    </style>
+</body>
+</html>
