@@ -9,11 +9,21 @@ function SortByKey(arr, key, order) {
             if (item === key) {
                 // keys.push(item)
                 values.push(arr[i][item]);
-                if (order === 'asc') {
-                    values.sort(function (a, b) { return a - b; });
+                if (typeof arr[i][item] === 'number') {
+                    if (order === 'asc') {
+                        values.sort(function (a, b) { return a - b; });
+                    }
+                    else if (order === 'desc') {
+                        values.sort(function (a, b) { return b - a; });
+                    }
                 }
-                else if (order === 'desc') {
-                    values.sort(function (a, b) { return b - a; });
+                else if (typeof arr[i][item] === 'string') {
+                    if (order === 'asc') {
+                        values.sort();
+                    }
+                    else if (order === 'desc') {
+                        values.sort().reverse();
+                    }
                 }
             }
         });

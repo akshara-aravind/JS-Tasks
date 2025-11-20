@@ -9,11 +9,19 @@ function SortByKey(arr:Object,key:string,order:string){
             if(item === key){
                 // keys.push(item)
                     values.push(arr[i][item])
+                    if(typeof arr[i][item] === 'number'){
                     if(order === 'asc'){
                         values.sort((a,b)=> a-b)
                     }else if(order === 'desc'){
                         values.sort((a,b)=>b-a)
                     }
+                  }else if(typeof arr[i][item] === 'string'){
+                    if(order === 'asc'){
+                        values.sort()
+                    }else if(order === 'desc'){
+                        values.sort().reverse()
+                    }
+                  }
                 }
             })
         }

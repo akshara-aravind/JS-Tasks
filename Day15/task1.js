@@ -1,14 +1,33 @@
 //1. Write a function which takes a string containing just the characters '(' and ')', and returns the length of the longest valid (well-formed) parentheses sub-string
+// function pattern(brackets){
+//     if(typeof(brackets) !== 'string') return 'Invalid'
+//     let bracket = brackets.split('')
+//     let count = 0
+//     for(let i=0; i<bracket.length;i++){
+//             if(bracket[i]+bracket[i+1] === '()'){
+//                 count += 2
+//             }
+//     }
+//     return count
+// }
 function pattern(brackets){
     if(typeof(brackets) !== 'string') return 'Invalid'
-    let bracket = brackets.split('')
-    let count = 0
-    for(let i=0; i<bracket.length;i++){
-            if(bracket[i]+bracket[i+1] === '()'){
-                count += 2
+    let maxLen = 0;
+    for(let i =0; i < brackets.length;i++){
+        let open = 0;
+        let close = 0;
+
+        for(let j=i; j<brackets.length;j++){
+            if(brackets[j] === '(') open++;
+            else close++
+
+            if(open === close){
+                maxLen = Math.max(maxLen,open+close)
             }
+            if(close > open) break
+        }
     }
-    return count
+    return maxLen
 }
 console.log(pattern('(()((())'))
 
@@ -23,7 +42,7 @@ const testCases = [
     },
     {
         input:'(()())',
-        expected:4
+        expected:6
     },
     {
         input:'123',
