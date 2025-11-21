@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,html{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+
+    }
+    body{
+        height: 100%;
+    }
+    /* body{
+        height: 100%;
+    }
+    .left{
+        width: 30%;
+        height: 100%;
+        background-color: brown;
+        transition: 0.3s linear;
+    }
+    img{
+        width: 35px;
+    }
+ */
+     .left{
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        background-color: brown;
+     }
+     .menu, .close{
+        width: 35px;
+        margin: 12px;
+     }
+    .right1,.right2,.right3{
+        display: none;
+        position: absolute;
+        margin-left: 50%;
+    }
+    .items{
+        display: none;
+        flex-direction: column;
+         margin-left: 10%;
+         color: #fff;
+    }
+    .list1,.list2,.list3{
+        margin-bottom: 20px;
+        list-style: none;
+        font-size: 25px;
+        color: #fff;
+    }
+</style>
+<body>
+    <div class="containerr">
+       <div class="left">
+                <img class = 'menu' src="img/icons8-menu-50.png" >
+                <img class = 'close' style=" display: none;"src="img/icons8-close-50.png" >
+                <div class="listItems"> 
+                <ul class="items">
+                    <li class="list1">Biriyani</li>
+                    <li class="list2">Pizza</li>
+                    <li class="list3">Fruit salad</li>
+                    </ul>
+                </div>           
+       </div>
+       <div class="right1">
+            <h1>BIRIYANI</h1>
+            <img style = 'width: 90%; height: 300px;' src="img/biriyani.jpeg">
+            <p style="line-height: 21px;">It is being rightly said that Biryani is possibly one thing that unifies all of us. It does not matter who we are, which region we belong to, what are our likes & dislikes maybe! The rich aroma of Biryani makes it irresistible for everyone. This dish is part of every family celebration & a common staple of Indian people. Generally, people connect Biryani with a heavy dish that is full of aromatic spices but did you know what are the health benefits of eating Biryani? This will surely keep you intrigued to know more about the health benefits of Biryani. We have listed down some of the health benefits of chicken biryani here, so let’s go through them & we are sure that after reading the health benefits of Chicken Biryani, you will wait no longer to place a chicken biryani order online from the best restaurant in Dubai – Amritsar Restaurant.</p>
+       </div>
+    </div>
+     <div class="right2">
+            <h1>PIZZA</h1>
+            <img style = 'width: 90%; height: 300px;' src="img/pizza.jpg">
+            <p style="line-height: 21px;">pizza, dish of Italian origin consisting of a flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other ingredients, baked quickly—usually, in a commercial setting, using a wood-fired oven heated to a very high temperature—and served hot.Why does pizza taste so good? Why does pizza taste so good?Discover the science of why pizza tastes good.See all videos for this article One of the simplest and most traditional pizzas is the Margherita, which is topped with tomatoes or tomato sauce, mozzarella, and basil. Popular legend relates that it was named for Queen Margherita, wife of Umberto I, who was said to have liked its mild fresh flavour and to have also noted that its topping colours—green, white, and red—were those of the Italian flag.</p>
+       </div>
+    </div>
+     <div class="right3">
+            <h1>FRUIT SALAD</h1>
+            <img style = 'width: 90%; height: 300px;' src="img/fruitsalad.jpg">
+            <p style="line-height: 21px;">Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer or a side as a salad. A fruit salad is sometimes known as a fruit cocktail (often connoting a canned product), or fruit cup (when served in a small container). There are many types of fruit salad, ranging from the basic (no nuts, marshmallows, or dressing) to the moderately sweet (Waldorf salad) to the sweet (ambrosia salad). Another "salad" containing fruit is a jello salad, with its many variations. A fruit cocktail is well-defined in the US to mean a well-distributed mixture of small diced pieces of (from highest percentage to lowest) peaches, pears, pineapple, grapes, and cherry halves. Fruit salad may also be canned (with larger pieces of fruit than a cocktail).</p>
+       </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

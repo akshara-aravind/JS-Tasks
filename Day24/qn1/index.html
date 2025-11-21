@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: linear-gradient(#041f2c);
+    }
+    .border{
+        width: 100%;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+    .contentContainer{
+        display: flex;
+        justify-content: space-around;
+    }
+    .items{
+        display: none;
+        list-style: none;
+        margin-top: 7px;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        background-color: #fff;
+    }
+    .list1,.list2,.list3{
+        margin-bottom: 10px;
+        border-bottom: 1px solid #d4d1d1
+    }
+    .list1:hover,.list2:hover,.list3:hover{
+        background-color:#ddd;
+    }
+    .menuItems:hover .items{
+        display: block
+    }
+    .sub1,.sub2,.sub3{
+        display: none;
+        list-style: none;
+        
+    }
+    .subLists{
+        margin:10px 10px;
+    }
+    .subLists:hover{
+        background-color: #ddd;
+    }
+    .list1:hover .sub1{
+        display: block;
+    }
+    .list2:hover .sub2{
+        display: block;
+    }
+    .list3:hover .sub3{
+        display: block;
+    }
+</style>
+<body>
+    <div class="container">
+      <div class="border">
+        <div class="contentContainer">
+            <div class="menuItems">
+                <div class="item">
+                    <img style = 'width: 17px; height: 17px;' src="img/icons8-home-24.png"><span class="content">Home</span>
+                </div>
+                <ul class="items">
+                    <li class="list1">item1
+                      <ul class="sub1">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                </li>
+                    <li class="list2">item2
+                      <ul class="sub2">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                        </li>
+                      </ul>
+                    <li class="list3">item3
+                      <ul class="sub3">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                        </li>
+                      </ul>
+                </ul>
+            </div>
+            <div class="menuItems">
+                <div class="item">
+                    <img style = 'width: 17px; height: 17px;' src="img/icons8-about-30.png"><span class="content">About</span>
+                </div>
+                <ul class="items">
+                    <li class="list1">item1
+                      <ul class="sub1">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>                        
+                    </li>
+                    <li class="list2">item2
+                      <ul class="sub2">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list3">item3
+                      <ul class="sub3">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuItems">
+                <div class="item">
+                    <img style = 'width: 17px; height: 17px;' src="img/icons8-contact-24.png" class="content">Content</span>
+                </div>
+                <ul class="items">
+                    <li class="list1">item1
+                      <ul class="sub1">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list2">item2
+                      <ul class="sub2">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list3">item3
+                      <ul class="sub3">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuItems">
+                <div class="item">
+                    <img style = 'width: 17px; height: 17px;' src="img/icons8-services-64.png"><span class="content">Services</span>
+                </div>
+                <ul class="items">
+                    <li class="list1">item1
+                      <ul class="sub1">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list2">item2
+                      <ul class="sub2">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list3">item3
+                      <ul class="sub3">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuItems">
+                <div class="item">
+                    <img style = 'width: 17px; height: 17px;' src="img/icons8-money-transfer-24.png"><span class="content">Other</span>
+                </div>
+                <ul class="items">
+                    <li class="list1">item1
+                      <ul class="sub1">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list2">item2
+                      <ul class="sub2">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                    <li class="list3">item3
+                      <ul class="sub3">
+                        <li class="subLists">sub-1</li>
+                        <li class="subLists">sub-2</li>
+                        <li class="subLists">sub-3</li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
