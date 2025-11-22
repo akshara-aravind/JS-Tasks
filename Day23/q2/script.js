@@ -1,36 +1,33 @@
-const image = document.querySelector('.image')
-const prev = document.querySelector('.prev')
-const next = document.querySelector('.next')
+const images = document.querySelector('.images')
+const prevBtn = document.querySelector('.prev')
+const nextBtn = document.querySelector('.next')
 
-let images = [
-    'img/img1.webp',
-    'img/img2.jpg',
-    'img/img3.jpg',
-    'img/img4.webp'
-]
-let count = 0
-let mouseoverInterval = setInterval(imageSlide,3000)
-let mouseLeaveInterval = setInterval(imageSlide,3000)
-function imageSlide(){
-   count = (count+1) % images.length
-    image.src = images[count]
+let count = 0;
+const total = document.querySelectorAll('.images img').length
+const width = 900;
+
+function showSlide(){
+    images.style.transform = `translateX(-${count * width}px)`;
 }
-imageSlide()
-next.addEventListener('click',()=>{
-    // console.log('clicked')
-    count = (count+1) % images.length
-    image.src = images[count]
-})
-prev.addEventListener('click',()=>{
-    count = (count-1+images.length)%images.length
-    image.src = images[count]
+nextBtn.addEventListener('click',()=>{
+    count = (count+1) % total
+    showSlide()
 })
 
-image.addEventListener('mouseover',()=>{
-    // console.log('mouseover')
-    clearInterval(mouseoverInterval)
-    clearInterval(mouseLeaveInterval)
+prevBtn.addEventListener('click',()=>{
+    count = (count-1+total)%total
+    showSlide()
 })
-image.addEventListener('mouseleave',()=>{
-  mouseoverInterval = setInterval(imageSlide,3000)
+let interval = setInterval(()=>{
+    count = (count+1) % total
+    showSlide()
+},3000)
+images.addEventListener('mouseover',()=>{
+    clearInterval(interval)
+})
+images.addEventListener('mouseleave',()=>{
+    interval = setInterval(()=>{
+        count = (count+1) % total
+        showSlide()
+    },3000)
 })
