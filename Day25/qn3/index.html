@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model window</title>
+</head>
+<style>
+    body{
+        background-color:pink;
+    }
+    .container{
+        position: relative;
+        transition: left 2s;
+    }
+    .content{
+        position: absolute;
+        top: 300px;
+        left: 43%;
+        border: 1px solid #fff;
+        width: 350px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: 0 4px 8px 0.2px;
+        animation-name: animation;
+        animation-duration: 5s;
+    }
+    @keyframes animation{
+        0% {left:0%}
+        25% {left: 43%}
+    }
+    .closeImg{
+        margin-left: 45%;
+        width: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div style="transition-property: left;">
+        <div class="content">
+        <h2>Model Window <img src="close.png" class="closeImg"></h2> 
+        <p style="line-height: 25px; font-size: 18px;">The modal should close on close-button click, backdrop click, or Escape key press.</p>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

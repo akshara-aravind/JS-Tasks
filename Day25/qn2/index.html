@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: #000;
+    }
+    .fixed{
+        width: 100%;
+        height: 70px;
+        background-color: #000;
+    }
+    .menuItems{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: #fff;
+    }
+    li{
+        list-style: none;
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 25px;
+    }
+    .homePage{
+        display: none;
+        position: relative;
+        text-align: center;
+        top: 0%;
+        animation-name: animation;
+        animation-duration: 5s;
+    }
+    .homeImg{
+        margin-top: 22px;
+        width: 100%;
+        height: 890px;
+    }
+    .left{
+        width: 300px;
+        position: absolute;
+        top: 200px;
+        left: 100px;
+        color: #fff;
+    }
+    .left h2{
+        width: 500px;
+        font-weight: 700;
+        font-size: 35px;
+    }
+    .left p{
+        width: 500px;
+        font-size: 20px;
+    }   
+    .home:hover, .about:hover, .explore:hover, .review:hover{
+      text-decoration:underline ;
+    } 
+    .leftSide{
+        position: absolute;
+        width: 50%;
+    }
+    .aboutPage{
+        display: none;
+        width: 100%;
+        position: relative;
+        top: 0%;
+        animation-name: animation;
+        animation-duration: 15s;
+    }
+    .aboutImg{
+        margin-top: 22px;
+        width: 100%;
+        height: 890px;
+        border-radius: 10px
+    }
+    .rightSide{
+        position: absolute;
+        margin-left: 52%;
+        color: rgba(250, 215, 215, 0.801);
+        top: 50px;
+    }
+    .rightSide p{
+        width: 90%;
+        line-height: 30px
+    }
+    .explorePage{
+      display: none;
+      color: #fff;
+      position: relative;
+      top: 0%;
+      animation-name: animation;
+      animation-duration: 15s;
+    }
+    .exploreImg{
+        margin-top: 50px;
+        width: 100%;   
+        border-radius: 50%;
+    }
+    .reviewPage{
+        display: none;
+        position: relative;
+        top: 0%;
+        animation-name: animation;
+        animation-duration: 15s;
+    }
+     .reviewImg{
+        width: 541px;
+        height: 541px;
+        object-fit: contain;
+        margin-top: 30px;
+        border-radius: 50px;
+     }
+    @keyframes animation{
+        0%{top: 100%}
+        25%{top: 0%}
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="fixed">
+           <div class="menuItems">
+                    <li class="home">Home</li>
+                    <li class="about">About us</li>
+                    <li class="explore">Explore Foods</li>
+                    <li class="review">Review</li>
+           </div>
+           <div class="homePage">
+            <img src="img/home.jpg" class="homeImg">
+              <div class="left">
+                    <h2>We deliver delicious & healthy food</h2>
+                    <p>order online or book a table. we are always ready to fulfill your demand. we provide your order within a very short time. with us to take our delicious food.</p>
+                    <p style="font-size: 25px; color: red;">More &#8594;</p>
+                </div>
+           </div>
+            <div class="aboutPage">
+                <div class="leftSide">
+                <img src="img/about.jpg" class="aboutImg">
+                </div>
+                <div class="rightSide">
+                 <h2>ABOUT US</h2>
+                 <p>We are an independent, family run, neighbourhood restaurant located in the community of Crouch End, North London. We are passionate about sustainably sourced seafood and our aim is to deliver the highest quality food and service in a relaxed, welcoming yet vibrant environment. Seafood fans will love our kitchen's offbeat and creative approach to ingredients. Oysters are firmly under the spotlight here at Lyon's, with a each variety paired with a particular garnish in order to "amplify and compliment their specific natural flavour". <br><br><br><br>
+                We are passionate about sustainably sourced seafood and our aim is to deliver the highest quality food and service in a relaxed, welcoming yet vibrant environment. Seafood fans will love our kitchen's offbeat and creative approach to ingredients. Oysters are firmly under the spotlight here at Lyon's, with a each variety paired with a particular garnish in order to "amplify and compliment their specific natural flavour"</p>
+                <button style="padding: 10px 20px; border: none; background-color: brown; color: #fff; margin-top: 10px;">More</button>
+                </div>    
+            </div>
+            <div class="explorePage">
+                <div style="position: absolute; width: 20%;">
+                <img src="img/explore.jpeg" class="exploreImg">
+                </div>
+                <div style="position: absolute; margin-left: 22%; margin-top: 50px; line-height: 30px;">
+                <p style="width: 90%;"> Food is one of the basic necessities of life. Food contains nutrients—substances essential for the growth, repair, and maintenance of body tissues and for the regulation of vital processes. Nutrients provide the energy our bodies need to function. <br><br> The energy in food is measured in units called calories. Age, sex, weight, height, and level of activity determine the number of calories a person needs each day. Depending on age, sex, and activity level, the recommended daily caloric intake for a child aged 11 to 14 can range anywhere from 1,600 to 2,600 calories per day, with sedentary girls needing the fewest calories and active boys needing the most. For adults, this can range from 1,800 to about 3,000.</p>
+                <h3 style="font-size: 30px;">Kinds of Nutrients</h3>
+                <p>Scientists divide nutrients into six major groups: carbohydrates, fats, proteins, minerals, vitamins, and water. Most foods contain all or most nutrient groups, in different amounts. <br><br>Carbohydrates provide energy for the body. Nearly all the carbohydrates we eat come from plants. They include starches found in cereal grains and plants like potatoes and yams. Sugars, found in fruits, vegetables, and milk, are also carbohydrates. Sugarcane and sugar beets are grown specifically for their high sugar content.<br><br><br>Many of the starches and sugars we eat have been processed into products, such as flour and corn syrup. These processed carbohydrates are used in cookies, cakes, breads, pastas, and pies. <br><br>Fats provide more than twice as much energy as carbohydrates. They also help protect and insulate the body and its internal organs. Common fats include vegetable oils, such as soybean, cottonseed, and corn oil. They are used in cooking and in the processing of many foods. Fats that come from animal products include butter and lard. Eggs, milk, cheese, meats, poultry, and fish also contain high levels of fats.<br><br>Proteins are the body’s chief tissue-builders. They help keep skin, bones, muscles, and blood healthy. Proteins also help regulate bodily processes, including transporting oxygen and nutrients into and out of cells; the clotting of blood; and the formation of antibodies, which help fight disease. Animal products, such as beef, fish, poultry, eggs, and dairy products, are high in protein. Grains, nuts, and some beans are also protein-rich foods. Minerals and vitamins are called micronutrients because they are needed in very small quantities compared with carbohydrates, fats, and proteins (known as macronutrients). Minerals provide building materials for the body and help regulate its activities, much as proteins do. Calcium and phosphorus build strong bones and teeth, iron contributes to healthy blood, and iodine helps keep the thyroid gland working.</p>
+            </div>
+            </div>
+            <div class="reviewPage">
+                <img src="img/review.avif" class="reviewImg">
+                <img src="img/img2.jpeg" class="reviewImg">
+                <img src="img/img3.jpeg" class="reviewImg">
+                <img src="img/img4.jpeg" class="reviewImg">
+                <img src="img/img5.jpeg" class="reviewImg">
+                <img src="img/img6.avif" class="reviewImg">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
